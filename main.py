@@ -1,15 +1,19 @@
 from stats import get_book_text, count_words, count_letters, sort_dict
 def main():
     txt = get_book_text("./books/frankenstein.txt")
+    print("============ BOOKBOT ============\nAnalyzing book found at books/frankenstein.txt...")
 
     twords = count_words(txt)
 
-    print(f"{twords} words found in the document")
+    print(f"----------- Word Count ----------\nFound {twords} total words")
 
     char_list = count_letters(txt)
     #print(char_list)
 
-    sort_dict(char_list)
-
+    char_list.sort(reverse=True, key=sort_dict)
+    print("--------- Character Count -------")
+    for i in char_list:
+        print(f"{i['char']}: {i['num']}") 
+    print("============= END ===============")
 
 main()

@@ -30,6 +30,4 @@ def count_letters(text):
     #print(s_dict_count)
 
 def sort_dict(things):
-    things.sort()
-    for i in things:
-        print(i)
+    return things["num"]
